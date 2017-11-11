@@ -1,0 +1,30 @@
+{
+  "name": "mean-stack",
+  "version": "1.0.0",
+  "description": "server for Panels-in-vue.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Draichi/mean-stack.git"
+  },
+  "keywords": [
+    "http",
+    "server"
+  ],
+  "author": "Draichi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Draichi/mean-stack/issues"
+  },
+  "homepage": "https://github.com/Draichi/mean-stack#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "consign": "^0.1.6",
+    "express": "^4.16.2",
+    "mongoose": "^4.13.1"
+  }
+}
