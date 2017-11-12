@@ -1,35 +1,63 @@
+var mongoose = require('mongoose');
 var api = {};
+var model = mongoose.model('Job');
 
 
 //methods
 api.list = function(req, res) {
-  res.json(jobs);
-}
+  model
+    .find({})
+    .then(function(jobs) {
+      res.json(jobs);
+    }, function(error) {
+      console.log(error);
+      res.status(500).json(error);
+    });
+};
 
 api.post = function(req, res) {
-  var job = jobs.post(function(req, res) {
-
-  });
-}
+  model
+    .create(req.body)
+    .then(function(job) {
+      res.json(job);
+    }, function(error) {
+      console.log(error);
+      res.status(500).json(error);
+    });
+};
 
 api.find = function(req, res) {
-  var job = jobs.find(function(job) {
-    return job._id == req.params.id;
-  });
-  res.json(job);
-}
+  model
+    .findById(req.params.id)
+    .then(function(job) {
+      if(!job) throw Error('errooo!');
+      res.json(job);
+    }, function(error) {
+      console.log(error);
+      res.status(404).json(error);
+    });
+};
 
 api.edit = function(req, res) {
-  
-}
+  model
+    .findByIdAndUpdate(req.params.id, req.body)
+    .then(function(job) {
+      res.json(job);
+    }, function(error) {
+      console.log(error);
+      res.status(500).json(error);
+    });
+};
 
 api.del = function(req, res) {
-  var job = jobs.find(function(req, res) {
-    return jpb._id != req.params.id;
-  });
-  res.sendStatus(204);
-}
+  model
+    .remove({_id: req.params.id})
+    .then(function() {
+      res.sendStatus(204);
+    }, function(error) {
+      console.log(error);
+      res.status(500).json(error);
+    });
+};
 
 module.exports = api;
-
-
