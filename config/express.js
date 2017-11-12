@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.json()); //is needed to use 'req.body' in job.js
 
 consign({ cwd: 'app' })
-  .include('api')
+  .include('models')
+  .then('api')
   .then('routes')
   .into(app);
 

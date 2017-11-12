@@ -1,24 +1,5 @@
 var api = {};
-var jobs = [
-  {
-    _id: 1,
-    title: 'oi quale',
-    date: new Date(),
-    description: 'ajsbdkjaçsbdçakjsbdakçsjdbakçsjbdkçasjdbajkçsbdçaksjdbkajsdbakçsjdsakdjb'
-  },
-  {
-    _id: 2,
-    title: 'ja aja aj aj aj aj ',
-    date: new Date(),
-    description: 'ajsbdkjaçsbdçakjsbdakçsjdbakçsjbdkçasjdbajkçsbdçaksjdbkajsdbakçsjdsakdjb'
-  },
-  {
-    _id: 3,
-    title: 'lucas',
-    date: new Date(),
-    description: 'draichi'
-  }
-]
+
 
 //methods
 api.list = function(req, res) {
